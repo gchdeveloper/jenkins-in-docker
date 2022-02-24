@@ -1,6 +1,6 @@
 # Run Jenkins in Docker
 
-*** This project is intended for my personal use only, it should not be depended on for professional projects, use at your own risk. ***
+***This project is intended for my personal use only, it should not be depended on for professional projects, use at your own risk.***
 
 ### What It Does
 
