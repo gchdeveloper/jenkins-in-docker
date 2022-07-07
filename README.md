@@ -19,7 +19,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
    3. Log out and log back in to refresh the user's group membership
       1. Verify `docker` group membership with `groups`
    4. Test installation with `docker run hello-world`
-   5. See [https://docs.docker.com/engine/install/linux-postinstall/](this page) if there are docker issues post-install.
+   5. See [this page](https://docs.docker.com/engine/install/linux-postinstall/) if there are docker issues post-install.
 3. Install docker compose
    1. Install manually with
       1. `DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}`
@@ -27,7 +27,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
       3. `curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose`
    2. Set exectuable permissions with `chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose`
    3. Test installation with `docker compose version`
-   4. See [https://docs.docker.com/compose/install/compose-plugin/#install-the-plugin-manually](this page) if there are docker compose issues post-install.
+   4. See [this page](https://docs.docker.com/compose/install/compose-plugin/#install-the-plugin-manually) if there are docker compose issues post-install.
 4. Run Jenkins
    1. Clone this project `git clone https://github.com/gchdeveloper/jenkins-in-docker.git`.
    2. cd into the `jenkins-in-docker` directory
@@ -52,7 +52,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
          1. Start the agent in the background with `eval "$(ssh-agent -s)"` (should display agent pid)
          2. Add the key with `ssh-add ~/.ssh/jenkins_rsa` (should display identity added)
       5. Test the key by connecting to github with `ssh -T git@github.com`m (should display a success message)
-      6. See [https://inst.eecs.berkeley.edu/~cs61c/sp15/labs/00/github_ssh_key_guide/sshkeys.html](this page) if there are any errors
+      6. See [this page](https://inst.eecs.berkeley.edu/~cs61c/sp15/labs/00/github_ssh_key_guide/sshkeys.html) if there are any errors
    2. Add the key to Jenkins credentials
       1. Navigate to Manage Jenkins -> Manage Credentials, select `global` domain, select Add Credentials
       2. Select:
@@ -64,7 +64,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
          6. `Private Key`: select 'Enter Directly', enter the contents of `~/.ssh/jenkins_rsa`
 
 ### How To Test It
-1. Test Jenkins by creating a test pipeline for a simple [https://github.com/gchdeveloper/simple-java-maven-app](github project)
+1. Test Jenkins by creating a test pipeline for a simple [github project](https://github.com/gchdeveloper/simple-java-maven-app)
    1. Add the Jenkins credentials key as a deploy key for the project
       1. Navigate to [https://github.com/gchdeveloper/simple-java-maven-app](https://github.com/gchdeveloper/simple-java-maven-app), Settings -> Deploy keys, select Add deploy key
       2. Select:
@@ -89,7 +89,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
          2. Select pipeline from the pipelines table
          3. Select running build from the builds table (status icon should be a progress gif)
          4. Can select build stages, select stage steps, and see step output
-   4. See [https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/#create-your-pipeline-project-in-jenkins](this page) if there are pipeline setup errors
+   4. See [this page](https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/#create-your-pipeline-project-in-jenkins) if there are pipeline setup errors
 
 ### How To Secure It
 
