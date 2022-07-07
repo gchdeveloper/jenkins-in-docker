@@ -20,14 +20,14 @@ services:
     jenkins-blueocean:
         image: gchdeveloper/myjenkins-blueocean:1.1
         ports: 
-          # - 8080:8080
-            - 8443:8443
+            - 8080:8080
+            # - 8443:8443
             - 50000:50000
-        command:
-            - "--httpPort=-1"
-            - "--httpsPort=8443"
-            - "--httpsKeyStore=/certs/client/jenkins.jks"
-            - "--httpsKeyStorePassword=your-strong-password"
+        # command:
+            # - "--httpPort=-1"
+            # - "--httpsPort=8443"
+            # - "--httpsKeyStore=/certs/client/jenkins.jks"
+            # - "--httpsKeyStorePassword=your-strong-password"
         volumes:
             - jenkins-data:/var/jenkins_home
             - jenkins-docker-certs:/certs/client:ro
