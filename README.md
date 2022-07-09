@@ -39,7 +39,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
    1. Navigate to [http://localhost:8080](http://localhost:8080) to access Jenkins.
    2. Unlock Jenkins with the initial admin password 
       1. The password will be prominently displayed in the server log near the end
-      2. *or* it can be found in this file on the server: `/var/jenkins_home/secrets/initialAdminPassword`
+      2. *or* it can be found in this file: `/var/jenkins_home/secrets/initialAdminPassword`
    3. Create the first admin user by filling in the displayed form
    4. Accept the initial value for the Jenkins URL (this can be changed later by navigating to Manage Jenkins -> Configure System -> Jenkins URL)
    5. Accept the defaults for the plugins to be installed (some will fail, but Jenkins will still run)
@@ -71,14 +71,14 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
          1. `Title`: build-box-jenkins (or any descriptive title)
          2. `Key`: enter the contents of `~/.ssh/jenkins_rsa.pub` (file contents should start with `ssh-rsa `)
    2. Create the project pipeline
-      1. Navigate to Dashboard -> New Item
+      1. In Jenkins, navigate to Dashboard -> New Item
       2. Enter a descriptive name (`test`), select Pipeline, select OK
       3. Scroll down to Pipeline, select: 
          1. `Definition`: Pipeline script from SCM
          2. `SCM`: Git 
          3. `Repository URL`: git@github.com:gchdeveloper/simple-java-maven-app.git
             1. After a few seconds, should get error message: `Failed to connect to repository:...Permission denied...`
-         4. `Credentials`: jenkins
+         4. `Credentials`: jenkins, or username from Jenkins credentials step above
             1. After a few seconds, error message should disappear
       4. Select Save
    3. Run the pipeline
@@ -92,7 +92,10 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
    4. See [this page](https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/#create-your-pipeline-project-in-jenkins) if there are pipeline setup errors
 
 ### How To Secure It
+1. TODO - add steps for creating a JKS file from a site cert, cert bundle, and cert key, then configuring Jenkins with that JKS file
 
-### Creating Pipelines
-6. Configure Jenkins following the steps [here](https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/#setup-wizard).
-7. Stop the containers with `docker-compose down`.
+### How To Shut It Down
+1. Stop the containers with `docker compose down`
+
+### How To Create Pipelines For Github Projects
+1.  See [How To Test It](#how-to-test-it) for an example of creating a pipeline
