@@ -51,10 +51,10 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
       4. Add the key to the SSH agent
          1. Start the agent in the background with `eval "$(ssh-agent -s)"` (should display agent pid)
          2. Add the key with `ssh-add ~/.ssh/jenkins_rsa` (should display identity added)
-      5. Test the key by connecting to github with `ssh -T git@github.com`m (should display a success message)
-      6. See [this page](https://inst.eecs.berkeley.edu/~cs61c/sp15/labs/00/github_ssh_key_guide/sshkeys.html) if there are any errors
+      5. Test the key by connecting to github with `ssh -T git@github.com` (should display a success message)
+      6. See [this page](https://inst.eecs.berkeley.edu/~cs61c/sp15/labs/00/github_ssh_key_guide/sshkeys.html) key creation or connection issues post-creation
    2. Add the key to Jenkins credentials
-      1. Navigate to Manage Jenkins -> Manage Credentials, select `global` domain, select Add Credentials
+      1. In Jenkins, navigate to Manage Jenkins -> Manage Credentials, select `global` domain, select Add Credentials
       2. Select:
          1. `Kind`: SSH Username with Private Key
          2. `Scope`: Global
@@ -72,7 +72,7 @@ This project allows [Jenkins](https://www.jenkins.io/) to be run with a single d
          2. `Key`: enter the contents of `~/.ssh/jenkins_rsa.pub` (file contents should start with `ssh-rsa `)
    2. Create the project pipeline
       1. In Jenkins, navigate to Dashboard -> New Item
-      2. Enter a descriptive name (`test`), select Pipeline, select OK
+      2. Enter a descriptive name for the pipeline (ex: `test`), select Pipeline, select OK
       3. Scroll down to Pipeline, select: 
          1. `Definition`: Pipeline script from SCM
          2. `SCM`: Git 
